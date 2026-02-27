@@ -3,6 +3,14 @@ clc,clear
 fprintf('Integrals (type int) or Derivatives (type dx)?\nEnter Yes for both.\n');
 comfirmation = input('Input: ','s');
 
+while ~strcmpi('int', comfirmation) || ~strcmpi('dx', comfirmation) || ~strcmpi('yes', comfirmation)
+
+    clc;
+    fprintf('Sorry, your input did not work, please try again: Integrals (type int) or Derivatives (type dx)?\nEnter Yes for both.\n');
+    comfirmation = input('Input: ','s');
+
+end
+
 derivatives = {'sin(x)','cos(x)','tan(x)','cot(x)','sec(x)','csc(x)'};
 integrals = {'cos(x)','-sin(x)','sec^2(x)','-csc^2(x)','sec(x)tan(x)','-csc(x)cot(x)'};
 
