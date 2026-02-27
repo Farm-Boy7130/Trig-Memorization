@@ -1,13 +1,13 @@
 clc,clear
 
 fprintf('Integrals (type int) or Derivatives (type dx)?\nEnter Yes for both.\n');
-comfirmation = input('Input: ','s');
+confirmation = input('Input: ','s');
 
-while ~strcmpi('int', comfirmation) || ~strcmpi('dx', comfirmation) || ~strcmpi('yes', comfirmation)
+while ~(strcmpi('int', confirmation) || strcmpi('dx', confirmation) || strcmpi('yes', confirmation))
 
     clc;
-    fprintf('Sorry, your input did not work, please try again: Integrals (type int) or Derivatives (type dx)?\nEnter Yes for both.\n');
-    comfirmation = input('Input: ','s');
+    fprintf('Sorry, your input didn''t work, please try again: Integrals (type int) or Derivatives (type dx)?\nEnter Yes for both.\n');
+    confirmation = input('Input: ','s');
 
 end
 
@@ -16,7 +16,7 @@ integrals = {'cos(x)','-sin(x)','sec^2(x)','-csc^2(x)','sec(x)tan(x)','-csc(x)co
 
 pauseTimer = 3;
 
-if strcmpi('yes', comfirmation) % BOTH INTEGRALS AND DERIVATIVES
+if strcmpi('yes', confirmation) % BOTH INTEGRALS AND DERIVATIVES
     fprintf('How many questions do you want?\n');
     qc = input('Input: ');
 
@@ -59,7 +59,7 @@ if strcmpi('yes', comfirmation) % BOTH INTEGRALS AND DERIVATIVES
 
     end
 
-elseif strcmpi('int', comfirmation) % INTEGRALS EXCLUSIVELY, NO DERIVATIVES WILL COME OUT OF THIS
+elseif strcmpi('int', confirmation) % INTEGRALS EXCLUSIVELY, NO DERIVATIVES WILL COME OUT OF THIS
     fprintf('How many questions do you want?\n');
     qc = input('Input: ');
 
@@ -83,7 +83,7 @@ elseif strcmpi('int', comfirmation) % INTEGRALS EXCLUSIVELY, NO DERIVATIVES WILL
 
     end
 
-elseif strcmpi('dx', comfirmation) % DERIVATIVES EXCLUSIVELY, NO INTEGRALS WILL COME OUT OF THIS
+elseif strcmpi('dx', confirmation) % DERIVATIVES EXCLUSIVELY, NO INTEGRALS WILL COME OUT OF THIS
     fprintf('How many questions do you want?\n');
     qc = input('Input: ');
 
